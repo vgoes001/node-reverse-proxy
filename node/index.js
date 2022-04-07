@@ -10,7 +10,8 @@ const config = {
 }
 const mysql = require('mysql')
 const connection = mysql.createConnection(config)
-
+const sqlCreateTable = `CREATE TABLE people(id int NOT NULL AUTO_INCREMENT, name varchar(255), PRIMARY KEY (id))`
+connection.query(sqlCreateTable)
 
 
 app.listen(3000,() => {
